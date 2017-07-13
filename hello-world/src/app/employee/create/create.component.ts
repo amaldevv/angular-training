@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Employee } from 'app/shared/models/employee';
 
 @Component({
   selector: 'app-employee-create',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateEmployeeComponent implements OnInit {
 
-  title = "Create Employee";
+  title = 'Create Employee';
+
+  @Output() employeeCreated = new EventEmitter();
+
+  newEmployee: Employee = new Employee();
+
+
+  OnCreateEmployee()  {
+    // console.log(this.newEmployee);
+
+    this.employeeCreated.emit({ employee: this.newEmployee});
+  }
   constructor() { }
 
   ngOnInit() {

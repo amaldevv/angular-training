@@ -55,3 +55,7 @@ h3 {
 .active{
   color: lawngreen !important;
 }
+
+.spacer {
+    margin-top: 40px; /* define margin as you see fit */
+}

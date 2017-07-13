@@ -1,3 +1,47 @@
-<p>
-  create works!
-</p>
+<h3>Create Employee</h3>
+<form>
+  <div class="container-fluid">
+    <div class="form-group">
+      <div class="row">
+        <div class ="col col-md-2">
+          <label >Employee Id </label>
+        </div>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control" [(ngModel)]="newEmployee.Id" name ="EmployeeId" />
+        </div>
+      </div>
+      <div class="row">
+        <div class ="col col-md-2">
+          <label>First Name </label>
+        </div>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control" [(ngModel)]="newEmployee.FirstName" name ="FirstName" />
+        </div>
+      </div>
+      <div class="row">
+        <div class ="col col-md-2">
+          <label>Last Name </label>
+        </div>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control" [(ngModel)]="newEmployee.LastName" name ="LastName" />
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class ="col col-md-2">
+          <label>City </label>
+        </div>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control" [(ngModel)]="newEmployee.City" name ="City" />
+        </div>
+        
+      </div>
+      <div class="row">
+          <div class="col-md-2">
+             <button type="submit" class= "btn btn-lg btn-block btn-primary"  
+             (click)="OnCreateEmployee(newEmployee)" >Create</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>

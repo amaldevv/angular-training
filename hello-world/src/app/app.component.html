@@ -23,10 +23,15 @@
     <div id="divEmployees{{ employee.Id }}" class="row col-md-12 align-items-start" (click)="onSelectEmployee(employee)" 
         
     *ngFor='let employee of employees'>
-        <div class="col-md-2 col-format" [class.active]="employee===SelectedEmployee"> {{ employee.Id }}</div>
-        <div class="col-md-2 col-format" [class.active]="employee===SelectedEmployee"> {{ employee.FirstName }}</div>
-        <div class="col-md-2 col-format" [class.active]="employee===SelectedEmployee"> {{ employee.LastName }}</div>
-        <div class="col-md-2 col-format" [class.active]="employee===SelectedEmployee"> {{ employee.City }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.Id }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.FirstName }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.LastName }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.City }}</div>
     </div>
 </div>  
-<app-employee-details [Employee] ="SelectedEmployee"></app-employee-details> 
+
+<app-employee-details class="spacer" [Employee] ="SelectedEmployee"></app-employee-details> 
+<div class="spacer">&nbsp;</div>
+<app-employee-create (employeeCreated)="OnEmployeeCreated($event)"  ></app-employee-create>
+    
+    

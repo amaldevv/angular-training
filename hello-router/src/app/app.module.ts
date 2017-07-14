@@ -10,24 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component'
 import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { appRouting } from "app/app.routing";
+import { NotfoundComponent } from './notfound/notfound.component';
 
-const appRoutes = [
-  {
 
-    path:'',
-    component: HomeComponent
-  },
-  {
-
-    path:'employees',
-    component: EmployeeComponent
-  },
-  {
-
-    path:'about',
-    component: AboutComponent
-  },
-];
 
 @NgModule({
   declarations: [
@@ -36,14 +22,16 @@ const appRoutes = [
     AboutComponent,
     EmployeeComponent,
     NavbarComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    appRouting
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { appRouting } from "app/app.routing";
 import { NotfoundComponent } from './notfound/notfound.component';
+import { EmployeeDetailsComponent } from './employee/details/details.component';
 
 
 
@@ -23,6 +24,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     EmployeeComponent,
     NavbarComponent,
     NotfoundComponent,
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,

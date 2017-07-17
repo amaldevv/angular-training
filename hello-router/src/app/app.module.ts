@@ -16,6 +16,7 @@ import { EmployeeDetailsComponent } from './employee/details/details.component';
 import { EmployeeEditComponent } from './employee/edit/edit.component';
 import { EmployeeDeleteComponent } from './employee/delete/delete.component';
 import { EmployeeCreateComponent } from './employee/create/create.component';
+import { EmployeeSectionComponent } from "app/employee/section/section.component";
 
 
 
@@ -32,6 +33,7 @@ import { EmployeeCreateComponent } from './employee/create/create.component';
     EmployeeEditComponent,
     EmployeeDeleteComponent,
     EmployeeCreateComponent,
+    EmployeeSectionComponent
   ],
   imports: [
     BrowserModule,

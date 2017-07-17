@@ -14,15 +14,14 @@ export const empRoutes:Routes = [
   {
     path:'create',
     component: EmployeeCreateComponent
-     
+
   },
    {
     path:':id/edit',
     component: EmployeeEditComponent
-     
+
   },
   {
     path:':id',
     component: EmployeeDetailsComponent
   }];
-  

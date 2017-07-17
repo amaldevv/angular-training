@@ -10,6 +10,7 @@ import { EmployeeDetailsComponent } from "app/employee/details/details.component
 import { EmployeeCreateComponent } from "app/employee/create/create.component";
 import { EmployeeEditComponent } from "app/employee/edit/edit.component";
 import { empRoutes } from "app/employee.routing";
+import { EmployeeSectionComponent } from "app/employee/section/section.component";
 
 
 
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
   },
   {
     path : 'employees',
-    
+    component: EmployeeSectionComponent,
     children :[
       ...empRoutes
     ]
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     path:'**',
     component: NotfoundComponent
   }
-  
+
 ];
 
 export const appRouting: ModuleWithProviders  =  RouterModule.forRoot(appRoutes);

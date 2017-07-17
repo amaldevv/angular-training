@@ -9,7 +9,7 @@ import { ModuleWithProviders } from "@angular/core";
 import { EmployeeDetailsComponent } from "app/employee/details/details.component";
 import { EmployeeCreateComponent } from "app/employee/create/create.component";
 import { EmployeeEditComponent } from "app/employee/edit/edit.component";
-import { empRoutes } from "app/employee.routing";
+
 import { EmployeeSectionComponent } from "app/employee/section/section.component";
 
 
@@ -25,13 +25,7 @@ const appRoutes: Routes = [
     redirectTo:'/',
     pathMatch:'full'
   },
-  {
-    path : 'employees',
-    component: EmployeeSectionComponent,
-    children :[
-      ...empRoutes
-    ]
-  },
+
   {
 
     path:'about',

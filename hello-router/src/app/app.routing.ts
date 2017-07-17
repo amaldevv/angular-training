@@ -1,12 +1,14 @@
 
 
 import { HomeComponent } from "app/home/home.component";
-import { EmployeeComponent } from "app/employee/employee.component";
+import { EmployeeListComponent } from "app/employee/list/list.component";
 import { AboutComponent } from "app/about/about.component";
 import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from "app/notfound/notfound.component";
 import { ModuleWithProviders } from "@angular/core";
 import { EmployeeDetailsComponent } from "app/employee/details/details.component";
+import { EmployeeCreateComponent } from "app/employee/create/create.component";
+import { EmployeeEditComponent } from "app/employee/edit/edit.component";
 
 
 
@@ -24,12 +26,23 @@ const appRoutes: Routes = [
   {
 
     path:'employees',
-    component: EmployeeComponent
+    component: EmployeeListComponent
+  },
+  {
+    path:'employees/create',
+    component: EmployeeCreateComponent
+     
+  },
+   {
+    path:'employees/:id/edit',
+    component: EmployeeEditComponent
+     
   },
   {
     path:'employees/:id',
     component: EmployeeDetailsComponent
   },
+  
   {
 
     path:'about',

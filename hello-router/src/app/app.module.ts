@@ -11,7 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { appRouting } from "app/app.routing";
 import { NotfoundComponent } from './notfound/notfound.component';
-import { EmployeeModule } from "app/employee/employee.module";
+
 
 
 
@@ -30,7 +30,7 @@ import { EmployeeModule } from "app/employee/employee.module";
   imports: [
     BrowserModule,
     FormsModule,
-    EmployeeModule,
+
     appRouting
 
   ],

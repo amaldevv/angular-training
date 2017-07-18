@@ -10,7 +10,7 @@ import { ModuleWithProviders } from "@angular/core";
 export const employeeRoute: Routes = [
 
     {
-      path : 'employees',
+      path : '',
       component: EmployeeSectionComponent,
 
     children:[
@@ -36,4 +36,4 @@ export const employeeRoute: Routes = [
   ];
 
   export const employeeRouting: ModuleWithProviders =
-                            RouterModule.forRoot(employeeRoute);
+                            RouterModule.forChild(employeeRoute);

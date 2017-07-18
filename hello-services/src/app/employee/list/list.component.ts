@@ -12,13 +12,13 @@ import { EmployeeListMockData } from 'app/shared/mock-data/EmployeeListMockData'
 })
 export class EmployeeListComponent implements OnInit {
 
-  employees: Employee[]= EmployeeListMockData;
+  employees: Employee[];//= EmployeeListMockData;
   constructor(private http: Http ) { }
 
   ngOnInit() {
     const employeeUrl = 'http://localhost:10255/api/employees';
     this.http.get(employeeUrl).subscribe((response)=>{
-      console.log(response.json());;
+      this.employees = response.json();
     });
   }
 

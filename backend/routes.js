@@ -3,7 +3,7 @@ var employeeRouter = express.Router();
 
 const mockData = require('./mock.employee');
 
-employeeRouter.get('/',(req,res)=> {
+employeeRouter.get('/employees',(req,res)=> {
     res.send(mockData);
 });
 

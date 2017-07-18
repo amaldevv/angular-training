@@ -17,7 +17,9 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     const employeeUrl = 'http://localhost:10255/api/employees';
-    this.http.get(employeeUrl);
+    this.http.get(employeeUrl).subscribe((response)=>{
+      console.log(response.json());;
+    });
   }
 
 }

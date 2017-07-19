@@ -29,11 +29,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this.EmployeeId = parseInt(this.route.snapshot.params['id']);
 
     this.employeeService.GetEmployeeDetail(this.EmployeeId)
-      .subscribe((response)=> {
-
-        this.selectedEmployee = response.json()
-        console.log(this.selectedEmployee);
-      });
+      .subscribe((employee)=>  this.selectedEmployee = employee);
   }
 
 }

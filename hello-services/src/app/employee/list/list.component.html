@@ -7,18 +7,21 @@
 <div class="container-fluid">
     <div class="row align-items-start ">
         <div class="col-md-2 col-heading">
-        Employee ID 
+        Employee ID
         </div>
         <div class="col-md-2 col-heading">
             First Name
         </div>
         <div class="col-md-2 col-heading">
-            Last Name 
+            Last Name
         </div>
         <div class="col-md-2 col-heading">
             City
         </div>
-        <div class="col-md-4 col-heading">
+        <div class="col-md-1 col-heading">
+            Image
+        </div>
+        <div class="col-md-3 col-heading">
                     &nbsp;
         </div>
     </div>
@@ -28,12 +31,13 @@
         <div class="col-md-2 col-format"> {{ employee.FirstName }}</div>
         <div class="col-md-2 col-format"> {{ employee.LastName }}</div>
         <div class="col-md-2 col-format"> {{ employee.City }}</div>
-        <div class="col-md-4 col-format"> 
+        <div class="col-md-1 col-format"><img height="25" src='{{ employee.PhotoUrl }}' /></div>
+        <div class="col-md-3 col-format">
             <a [routerLink]="['/employees',employee.Id]" class="btn btn-sm btn-info"
                     id="ViewBtn{{employee.Id}}"  >View</a>
             <a [routerLink]="['/employees',employee.Id,'edit']" class="btn btn-sm btn-info"
                     id="EditBtn{{employee.Id}}"  >Edit</a>
-            <a [routerLink]="['/employees',employee.Id,'delete']" class="btn btn-sm btn-danger" 
+            <a [routerLink]="['/employees',employee.Id,'delete']" class="btn btn-sm btn-danger"
                     id="DeleteBtn{{employee.Id}}"  >Delete</a></div>
     </div>
-</div>  
+</div>

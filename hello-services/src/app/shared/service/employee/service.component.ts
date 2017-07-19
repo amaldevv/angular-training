@@ -22,4 +22,7 @@ export class EmployeeService  {
 
     return this.http.get(`${this.employeeUrl}/${employeeId}`).map(response => response.json());
   }
+  CreateNewEmployee(newEmployee){
+    return this.http.post(this.employeeUrl,newEmployee).map(response=>response.json());
+  }
 }

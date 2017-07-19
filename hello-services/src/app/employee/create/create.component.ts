@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from "app/shared/models/employee";
+import { EmployeeService } from "app/shared/service/employee/service.component";
 
 @Component({
   selector: 'app-employee-create',
@@ -16,9 +17,15 @@ export class EmployeeCreateComponent implements OnInit {
      HrCode:'',
      PhotoUrl:''
   };
-  constructor() { }
+  constructor(private service : EmployeeService) { }
 
   ngOnInit() {
   }
 
+  createNewEmployee(){
+    this.service.CreateNewEmployee(this.newEmployee)
+    .subscribe(createdEmp => {
+      console.log(createdEmp);
+    })
+  }
 }

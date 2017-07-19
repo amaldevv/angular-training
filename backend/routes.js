@@ -22,13 +22,13 @@ employeeRouter.get('/employees/:id',(req,res)=> {
         res.json('Not Found for ' + empID);
 });
 
-employeeRouter.post('/employees/create',(req,res)=> {
+employeeRouter.post('/employees',(req,res)=> {
     console.log(req.body);
     const newEmployee = req.body;
     
     newEmployee.Id = faker.random.number(1000);
     mockData.push(newEmployee);
-    res.status(201,send(newEmployee));
+    res.status(201).send(newEmployee);
     
 });
 

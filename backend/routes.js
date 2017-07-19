@@ -1,4 +1,5 @@
 const express  =require('express');
+const faker  =require('faker');
 var employeeRouter = express.Router();
 
 const mockData = require('./mock.employee');
@@ -22,7 +23,13 @@ employeeRouter.get('/employees/:id',(req,res)=> {
 });
 
 employeeRouter.post('/employees/create',(req,res)=> {
-    res.send("Create employee");
+    console.log(req.body);
+    const newEmployee = req.body;
+    
+    newEmployee.Id = faker.random.number(1000);
+    mockData.push(newEmployee);
+    res.status(201,send(newEmployee));
+    
 });
 
 module.exports = employeeRouter;

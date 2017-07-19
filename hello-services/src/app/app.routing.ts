@@ -1,5 +1,4 @@
 
-
 import { HomeComponent } from "app/home/home.component";
 import { EmployeeListComponent } from "app/employee/list/list.component";
 import { AboutComponent } from "app/about/about.component";

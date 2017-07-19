@@ -3,7 +3,7 @@ import {  Http } from '@angular/http';
 
 import { Employee } from 'app/shared/models/employee';
 
-import { EmployeeListMockData } from 'app/shared/mock-data/EmployeeListMockData';
+import { EmployeeService } from "app/shared/service/employee/service.component";
 
 @Component({
   selector: 'app-employee-list',
@@ -12,12 +12,16 @@ import { EmployeeListMockData } from 'app/shared/mock-data/EmployeeListMockData'
 })
 export class EmployeeListComponent implements OnInit {
 
-  employees: Employee[]= EmployeeListMockData;
-  constructor(private http: Http ) { }
+  employees: Employee[];//= EmployeeListMockData;
+  constructor(private http: Http,
+    private employeeService : EmployeeService    ) {
+
+    }
 
   ngOnInit() {
-    const employeeUrl = 'http://localhost:10255/api/employees';
-    this.http.get(employeeUrl);
+    this.employeeService.GetEmployees().subscribe(allEmployees =>  this.employees = allEmployees);
+
+
   }
 
 }

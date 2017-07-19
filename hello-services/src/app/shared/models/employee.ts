@@ -1,6 +1,8 @@
 export class Employee{
-    Id : string;
+    Id : number;
     FirstName : string;
     LastName : string;
     City : string;
+    HrCode: string;
+    PhotoUrl:string;
 }

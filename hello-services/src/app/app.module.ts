@@ -17,6 +17,8 @@ import { EmployeeModule } from "app/employee/employee.module";
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { EmployeeModule } from "app/employee/employee.module";
     NavbarComponent,
     NotfoundComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { EmployeeModule } from "app/employee/employee.module";
     appRouting
 
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 

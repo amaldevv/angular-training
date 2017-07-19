@@ -1,4 +1,21 @@
-<a routerLink="/employees" class="btn btn-sm btn-info">Back</a>
-<p>
-Selected Employee With Id {{EmployeeId}}
-</p>
+<div *ngIf="selectedEmployee">
+  <a routerLink="/employees" class="btn btn-sm btn-info">Back</a>
+  <p>
+  Selected Employee With Id {{selectedEmployee.Id}}
+  </p>
+  <div class="row">
+    <div class="col-sm-2 col-md-2">
+        <img src="{{selectedEmployee.PhotoUrl}}"
+        alt="" class="img-rounded img-responsive" />
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <blockquote>
+            <p>{{selectedEmployee.FirstName}} {{selectedEmployee.LastName}}</p> <small>
+              <cite title="Source Title">{{selectedEmployee.City}}
+                <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+        </blockquote>
+
+    </div>
+
+  </div>
+</div>

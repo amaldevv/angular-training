@@ -7,7 +7,8 @@ for(let i=0;i<10;i++)
             HrCode:faker.random.alphaNumeric(),
             FirstName :faker.name.firstName(),
             LastName:faker.name.lastName(),
-            photo_url: faker.image.imageUrl()
+            PhotoUrl: faker.image.imageUrl(),
+            City: faker.address.city()
         };
         listofEmployees.push(newEmpObj);
     }

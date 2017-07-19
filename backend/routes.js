@@ -21,4 +21,8 @@ employeeRouter.get('/employees/:id',(req,res)=> {
         res.json('Not Found for ' + empID);
 });
 
+employeeRouter.post('/employees/create',(req,res)=> {
+    res.send("Create employee");
+});
+
 module.exports = employeeRouter;

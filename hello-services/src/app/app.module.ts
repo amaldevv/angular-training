@@ -12,7 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { appRouting } from "app/app.routing";
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from "app/employee/employee.module";
-import { EmployeeService } from "app/shared/service/employee/service.component";
+
 
 
 
@@ -38,7 +38,7 @@ import { EmployeeService } from "app/shared/service/employee/service.component";
 
   ],
   providers: [
-    EmployeeService
+
   ],
   bootstrap: [AppComponent]
 })

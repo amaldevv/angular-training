@@ -12,6 +12,8 @@ import { EmployeeEditComponent } from "../employee/edit/edit.component";
 import { EmployeeDeleteComponent } from "../employee/delete/delete.component";
 import { EmployeeCreateComponent } from "../employee/create/create.component";
 import { EmployeeSectionComponent } from "../employee/section/section.component";
+import { EmployeeService } from "../shared/service/employee/service.component";
+
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import { EmployeeSectionComponent } from "../employee/section/section.component"
     EmployeeCreateComponent,
     EmployeeSectionComponent
   ],
-  providers: [],
+  providers: [ EmployeeService],
 })
 export class EmployeeModule {
 

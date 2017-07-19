@@ -15,5 +15,9 @@ export class EmployeeService  {
 
      return this.http.get(this.employeeUrl)
   }
+  GetEmployeeDetail(employeeId)
+  {
 
+    return this.http.get(`${this.employeeUrl}/${employeeId}`);
+  }
 }

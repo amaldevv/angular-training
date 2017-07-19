@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,  Router } from "@angular/router";
+import { EmployeeService } from "app/shared/service/employee/service.component";
+import { Employee } from "app/shared/models/employee";
 
 @Component({
   selector: 'app-employee-details',
@@ -8,19 +10,30 @@ import { ActivatedRoute,  Router } from "@angular/router";
 })
 export class EmployeeDetailsComponent implements OnInit {
 
-  EmployeeId :string;
+  selectedEmployee : Employee = new Employee();
+  EmployeeId :number;
   constructor(private route: ActivatedRoute,
-              private router: Router) { 
+              private router: Router,
+              private employeeService : EmployeeService
+            ) {
 
-   
+
   }
-  
+
   goBack(){
     this.router.navigate['/employees']
   }
   ngOnInit() {
-    console.log( this.route.snapshot.params['id']);
-    this.EmployeeId = this.route.snapshot.params['id'];
+
+
+    this.EmployeeId = parseInt(this.route.snapshot.params['id']);
+
+    this.employeeService.GetEmployeeDetail(this.EmployeeId)
+      .subscribe((response)=> {
+
+        this.selectedEmployee = response.json()
+        console.log(this.selectedEmployee);
+      });
   }
 
 }

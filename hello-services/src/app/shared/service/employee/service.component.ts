@@ -3,6 +3,7 @@ import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/do';
 import { Observable } from "rxjs/Observable";
 import { Employee } from "app/shared/models/employee";
 
@@ -16,9 +17,10 @@ export class EmployeeService  {
 
   GetEmployees(): Observable<Employee[]> {
 
+    return this.http.get(this.employeeUrl).map(response => response.json())
+    .do(response => console.log(response))
+    .catch(this.handleError);
 
-     return this.http.get(this.employeeUrl).map(response => response.json())
-     .catch(this.handleError);
   }
   GetEmployeeDetail(employeeId): Observable<Employee>
   {

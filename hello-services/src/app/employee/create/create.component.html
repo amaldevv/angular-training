@@ -1,6 +1,8 @@
 <a routerLink="/employees" class="btn btn-sm btn-info">Back</a>
 <p>Create New Employee</p>
-
+<div class="alert alert-success" *ngIf="sucessMessage">
+  {{sucessMessage}}
+</div>
 <form (ngSubmit)="createNewEmployee()">
   <div class="container-fluid">
     <div class="form-group">

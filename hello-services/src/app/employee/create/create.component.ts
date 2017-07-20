@@ -18,6 +18,8 @@ export class EmployeeCreateComponent implements OnInit {
      HrCode:'',
      PhotoUrl:''
   };
+
+  sucessMessage : string;
   constructor(private service : EmployeeService,
     private router: Router) { }
 
@@ -28,7 +30,8 @@ export class EmployeeCreateComponent implements OnInit {
     this.service.CreateNewEmployee(this.newEmployee)
     .subscribe(createdEmp => {
       console.log(createdEmp);
-      this.router.navigate(['/employees', createdEmp.Id]);
+       this.sucessMessage =`Created Successfully with Employee Id : ${createdEmp.Id}`;
+      //this.router.navigate(['/employees', createdEmp.Id]);
     })
   }
 }

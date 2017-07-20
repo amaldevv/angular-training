@@ -27,6 +27,7 @@ employeeRouter.post('/employees',(req,res)=> {
     const newEmployee = req.body;
     
     newEmployee.Id = faker.random.number(1000);
+    newEmployee.PhotoUrl= faker.image.imageUrl();
     mockData.push(newEmployee);
     res.status(201).send(newEmployee);
     

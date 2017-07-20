@@ -33,4 +33,16 @@ employeeRouter.post('/employees',(req,res)=> {
     
 });
 
+employeeRouter.put('/employees/:id/',(req,res)=>{
+    const choosenEmployee = req.body;
+    console.log(choosenEmployee);
+    const selectedEmployeeIndex = mockData.findIndex((employee)=>{
+        return employee.Id === choosenEmployee.Id;
+
+    });
+    console.log(selectedEmployeeIndex);
+    mockData.splice(selectedEmployeeIndex,1,choosenEmployee);
+    res.status(201).send(choosenEmployee);
+});
+
 module.exports = employeeRouter;

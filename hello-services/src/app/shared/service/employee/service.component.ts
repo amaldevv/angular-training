@@ -33,6 +33,14 @@ export class EmployeeService  {
     .catch(this.handleError );
   }
 
+  EditEmployee(selectedEmployee)
+  {
+      console.log(selectedEmployee);
+    return this.http.put(`${this.employeeUrl}/${selectedEmployee.Id}`,selectedEmployee)
+    .map(response=>response.json())
+    .catch(this.handleError );
+  }
+
   private handleError(err)
   {
     return  Observable.throw('Internal Server Error');

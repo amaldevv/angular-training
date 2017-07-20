@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/topromise';
 import { Observable } from "rxjs/Observable";
 import { Employee } from "app/shared/models/employee";
 
@@ -15,10 +16,11 @@ export class EmployeeService  {
 
 
 
-  GetEmployees(): Observable<Employee[]> {
+  GetEmployees(): Promise<Employee[]> {
 
     return this.http.get(this.employeeUrl).map(response => response.json())
     .do(response => console.log(response))
+    .toPromise()
     .catch(this.handleError);
 
   }

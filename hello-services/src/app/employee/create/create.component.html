@@ -15,7 +15,7 @@
         </div>
         <div class ="col col-md-2">
           <input type="text" class="form-control" [(ngModel)]="newEmployee.Id"
-            name ="EmployeeId" #EmployeeId required />
+            name ="EmployeeId" #EmployeeId="ngModel"   />
         </div>
       </div>
       <div class="row">
@@ -24,7 +24,8 @@
         </div>
         <div class ="col col-md-2">
           <input type="text" class="form-control" [(ngModel)]="newEmployee.FirstName"
-           name ="FirstName" #FirstName required />
+           name ="FirstName" required #firstName="ngModel"  />
+           <span *ngIf="firstName.touched && firstName.invalid">First Name is required</span>
         </div>
       </div>
       <div class="row">
@@ -33,7 +34,8 @@
         </div>
         <div class ="col col-md-2">
           <input type="text" class="form-control" [(ngModel)]="newEmployee.LastName"
-            name ="LastName" #LastName  required />
+            name ="LastName" required  #LastName="ngModel"   />
+             <span *ngIf="LastName.touched && LastName.invalid">Last Name is required</span>
         </div>
 
       </div>
@@ -43,7 +45,8 @@
         </div>
         <div class ="col col-md-2">
           <input type="text" class="form-control" [(ngModel)]="newEmployee.City"
-            name ="City" #City required />
+            name ="City" #City="ngModel"  required />
+            <span *ngIf="City.touched && City.invalid">City is required</span>
         </div>
 
       </div>

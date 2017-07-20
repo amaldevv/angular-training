@@ -6,7 +6,7 @@
 <div class="alert alert-danger" *ngIf="errorMessage">
   {{errorMessage}}
 </div>
-<form (ngSubmit)="createNewEmployee()" #CreateForm>
+<form (ngSubmit)="createNewEmployee()" #CreateForm="ngForm">
   <div class="container-fluid" *ngIf="!errorMessage">
     <div class="form-group">
       <div class="row">
@@ -25,7 +25,7 @@
         <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
           <input type="text" class="form-control" [(ngModel)]="newEmployee.FirstName"
            name ="FirstName" required #firstName="ngModel"  />
-           <span *ngIf="firstName.touched && firstName.invalid">First Name is required</span>
+           <span  class="help-block " *ngIf="firstName.touched && firstName.invalid">First Name is required</span>
         </div>
       </div>
       <div class="row">
@@ -35,7 +35,7 @@
         <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
           <input type="text" class="form-control" [(ngModel)]="newEmployee.LastName"
             name ="LastName" required  #LastName="ngModel"   />
-             <span *ngIf="LastName.touched && LastName.invalid">Last Name is required</span>
+             <span class="help-block " *ngIf="LastName.touched && LastName.invalid">Last Name is required</span>
         </div>
 
       </div>
@@ -46,16 +46,17 @@
         <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
           <input type="text" class="form-control" [(ngModel)]="newEmployee.City"
             name ="City" #City="ngModel"  required />
-            <span *ngIf="City.touched && City.invalid">City is required</span>
+            <span class="help-block " *ngIf="City.touched && City.invalid">City is required</span>
         </div>
 
       </div>
       <div class="row">
           <div class="col-md-2">
-             <button type="submit" class= "btn btn-lg btn-block btn-primary"
+             <button [disabled]="!CreateForm.valid" type="submit" class= "btn btn-lg btn-block btn-primary"
              >Create</button>
           </div>
       </div>
     </div>
   </div>
+
 </form>

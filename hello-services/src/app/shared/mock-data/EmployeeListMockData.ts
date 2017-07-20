@@ -1,29 +1,38 @@
 
 import { Employee } from "app/shared/models/employee";
 
-export const EmployeeListMockData : Employee[] = [{
-        Id : "001",
+export const EmployeeListMockData : Employee[] = [
+  {
+        Id : 1,
         FirstName: "Amal",
         LastName:"Dev",
-        City :"Trivandrum"
+        City :"Trivandrum",
+        HrCode:"",
+        PhotoUrl:""
 
     },
     {
-        Id : "002",
+        Id : 2,
         FirstName : "Test01",
         LastName : "Test01",
         City : "Chennai",
+        HrCode:"",
+        PhotoUrl:""
     },
     {
-        Id :"003",
+        Id :3,
         FirstName : "Test02",
         LastName : "Test02",
-        City : "New Delhi"
+        City : "New Delhi",
+        HrCode:"",
+        PhotoUrl:""
     },
     {
-        Id :"004",
+        Id :4,
         FirstName : "Test03",
         LastName : "Test03",
-        City:"Mumbai"
+        City:"Mumbai",
+        HrCode:"",
+        PhotoUrl:""
     }
 ]

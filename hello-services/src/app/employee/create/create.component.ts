@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from "app/shared/models/employee";
 import { EmployeeService } from "app/shared/service/employee/service.component";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-employee-create',
@@ -17,7 +18,8 @@ export class EmployeeCreateComponent implements OnInit {
      HrCode:'',
      PhotoUrl:''
   };
-  constructor(private service : EmployeeService) { }
+  constructor(private service : EmployeeService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +28,7 @@ export class EmployeeCreateComponent implements OnInit {
     this.service.CreateNewEmployee(this.newEmployee)
     .subscribe(createdEmp => {
       console.log(createdEmp);
+      this.router.navigate(['/employees', createdEmp.Id]);
     })
   }
 }

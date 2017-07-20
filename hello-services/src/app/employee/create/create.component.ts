@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 export class EmployeeCreateComponent implements OnInit {
 
   newEmployee:Employee ={
-    Id : 0,
+    Id : null,
      FirstName:'',
      LastName:'',
      City:'',

@@ -12,6 +12,7 @@ import { EmployeeService } from "app/shared/service/employee/service.component";
 })
 export class EmployeeListComponent implements OnInit {
 
+  errorMessage:string;
   employees: Employee[];//= EmployeeListMockData;
   constructor(private http: Http,
     private employeeService : EmployeeService    ) {
@@ -24,6 +25,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.GetEmployees()
     .subscribe(allEmployees =>  this.employees = allEmployees,
       (err) => {
+        this.errorMessage= err;
         console.log("From list component ", err);
       }
 

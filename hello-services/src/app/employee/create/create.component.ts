@@ -20,6 +20,7 @@ export class EmployeeCreateComponent implements OnInit {
   };
 
   sucessMessage : string;
+  errorMessage : string;
   constructor(private service : EmployeeService,
     private router: Router) { }
 
@@ -32,6 +33,12 @@ export class EmployeeCreateComponent implements OnInit {
       console.log(createdEmp);
        this.sucessMessage =`Created Successfully with Employee Id : ${createdEmp.Id}`;
       //this.router.navigate(['/employees', createdEmp.Id]);
-    })
+    },
+      (err) => {
+        this.errorMessage= err;
+        console.log("From create component ", err);
+      }
+
+    );
   }
 }

@@ -13,10 +13,7 @@
         Employee ID
         </div>
         <div class="col-md-2 col-heading">
-            First Name
-        </div>
-        <div class="col-md-2 col-heading">
-            Last Name
+            Full Name
         </div>
         <div class="col-md-2 col-heading">
             City
@@ -31,8 +28,7 @@
 
     <div class="row align-items-start" *ngFor='let employee of employees'>
         <div class="col-md-2 col-format"> {{ employee.Id }}</div>
-        <div class="col-md-2 col-format"> {{ employee.FirstName }}</div>
-        <div class="col-md-2 col-format"> {{ employee.LastName }}</div>
+        <div class="col-md-2 col-format"> {{ employee.FullName }}</div>
         <div class="col-md-2 col-format"> {{ employee.City }}</div>
         <div class="col-md-1 col-format"><img height="25" src='{{ employee.PhotoUrl }}' /></div>
         <div class="col-md-3 col-format">

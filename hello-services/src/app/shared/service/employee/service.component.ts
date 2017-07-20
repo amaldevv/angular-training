@@ -1,6 +1,8 @@
 import {  Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import { Observable } from "rxjs/Observable";
 import { Employee } from "app/shared/models/employee";
 
@@ -15,14 +17,22 @@ export class EmployeeService  {
   GetEmployees(): Observable<Employee[]> {
 
 
-     return this.http.get(this.employeeUrl).map(response => response.json());
+     return this.http.get(this.employeeUrl).map(response => response.json())
+     .catch(this.handleError);
   }
   GetEmployeeDetail(employeeId): Observable<Employee>
   {
 
-    return this.http.get(`${this.employeeUrl}/${employeeId}`).map(response => response.json());
+    return this.http.get(`${this.employeeUrl}/${employeeId}`).map(response => response.json())
+      .catch(this.handleError);
   }
   CreateNewEmployee(newEmployee){
-    return this.http.post(this.employeeUrl,newEmployee).map(response=>response.json());
+    return this.http.post(this.employeeUrl,newEmployee).map(response=>response.json())
+    .catch(this.handleError );
+  }
+
+  private handleError(err)
+  {
+    return  Observable.throw('Internal Server Error');
   }
 }

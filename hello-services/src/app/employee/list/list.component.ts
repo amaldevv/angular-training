@@ -22,7 +22,12 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     this.employeeService.GetEmployees()
-    .subscribe(allEmployees =>  this.employees = allEmployees)
+    .subscribe(allEmployees =>  this.employees = allEmployees,
+      (err) => {
+        console.log("From list component ", err);
+      }
+
+    )
 
 
 

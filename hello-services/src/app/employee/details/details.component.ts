@@ -29,7 +29,10 @@ export class EmployeeDetailsComponent implements OnInit {
     this.EmployeeId = parseInt(this.route.snapshot.params['id']);
 
     this.employeeService.GetEmployeeDetail(this.EmployeeId)
-      .subscribe((employee)=>  this.selectedEmployee = employee);
+      .subscribe((employee)=>  this.selectedEmployee = employee,
+      (err) => {
+        console.log("From details component ", err);
+      });
   }
 
 }

@@ -1,0 +1,9 @@
+<div class="container-fluid col-md-12">
+    <div class="row align-items-start" *ngIf="Employee" >
+      <h3> {{ title }} - {{ Employee.FirstName }} - {{ Employee.LastName }}</h3>
+        <div class="col-sm-2 col-heading"> {{ Employee.Id }}</div>
+        <div class="col-sm-2 col-heading"> {{ Employee.FirstName }}</div>
+        <div class="col-sm-2 col-heading"> {{ Employee.LastName }}</div>
+        <div class="col-sm-2 col-heading"> {{ Employee.City }}</div>
+    </div>
+</div>

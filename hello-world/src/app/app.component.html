@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!-- <app-home></app-home>
+<app-about></app-about>
+<app-employee></app-employee> -->
+
+<div class="container-fluid col-md-12">
+    <div class="row align-items-start col-md-12">
+        <div class="col-md-2 col-heading">
+        Employee ID 
+        </div>
+        <div class="col-md-2 col-heading">
+            First Name
+        </div>
+        <div class="col-md-2 col-heading">
+            Last Name 
+        </div>
+        <div class="col-md-2 col-heading">
+            City
+        </div>
+    </div>
+
+    <div id="divEmployees{{ employee.Id }}" class="row col-md-12 align-items-start" (click)="onSelectEmployee(employee)" 
+        
+    *ngFor='let employee of employees'>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.Id }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.FirstName }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.LastName }}</div>
+        <div class="col-md-2 col-format" [ngClass]="GetActiveClass(employee,SelectedEmployee)"> {{ employee.City }}</div>
+    </div>
+</div>  
+
+<app-employee-details class="spacer" [Employee] ="SelectedEmployee"></app-employee-details> 
+<div class="spacer">&nbsp;</div>
+<app-employee-create (employeeCreated)="OnEmployeeCreated($event)"  ></app-employee-create>
+    
+    

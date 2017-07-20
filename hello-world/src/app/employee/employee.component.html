@@ -1,0 +1,49 @@
+<h3>
+    {{title}}
+</h3>
+<p>Employee Details</p>
+<div class="container">
+    <div class="row align-items-start ">
+        <div class="col-sm-2 col-heading">
+        Employee ID 
+        </div>
+        <div class="col-sm-2 col-heading">
+            First Name
+        </div>
+        <div class="col-sm-2 col-heading">
+            Last Name 
+        </div>
+        <div class="col-sm-2 col-heading">
+            City
+        </div>
+    </div>
+
+    <div class="row align-items-start" *ngFor='let employee of employees'>
+        <div class="col-sm-2 col-format"> {{ employee.Id }}</div>
+        <div class="col-sm-2 col-format"> {{ employee.FirstName }}</div>
+        <div class="col-sm-2 col-format"> {{ employee.LastName }}</div>
+        <div class="col-sm-2 col-format"> {{ employee.City }}</div>
+    </div>
+</div>  
+
+
+<p>Actions</p>
+<ul>
+    <li *ngFor='let action of actions'>{{action}}</li>
+</ul>
+
+<div class="container-fluid" *ngFor='let employee of employees'>
+    <div class="row col-md-12">
+        <div class="col-md-1 grid-format">Employee Id</div>
+        <div class="col-md-1 col-format"><input  class="control-format-small" type="text" [(ngModel)]="employee.Id"></div>
+   
+        <div class="col-md-1 grid-format">First Name</div>
+        <div class="col-md-2 col-format"><input class="control-format-auto" type="text" [(ngModel)]="employee.FirstName"></div>
+   
+        <div class="col-md-1 grid-format">Last Name</div>
+        <div class="col-md-2 col-format"><input class="control-format-auto" type="text" [(ngModel)]="employee.LastName"></div>
+
+        <div class="col-md-1 grid-format">City</div>
+        <div class="col-md-2 col-format"><input class="control-format-auto" type="text" [(ngModel)]="employee.City"></div>
+    </div>
+</div>

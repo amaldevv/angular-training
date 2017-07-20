@@ -25,8 +25,10 @@ export class EmployeeService  {
   GetEmployeeDetail(employeeId): Observable<Employee>
   {
 
-    return this.http.get(`${this.employeeUrl}/${employeeId}`).map(response => response.json())
-      .catch(this.handleError);
+    return this.http.get(`${this.employeeUrl}/${employeeId}`)
+    .map(response=>response.json())
+    .map(this.formatEmployee)
+    .catch(this.handleError);
   }
   CreateNewEmployee(newEmployee){
     return this.http.post(this.employeeUrl,newEmployee).map(response=>response.json())
@@ -44,5 +46,16 @@ export class EmployeeService  {
   private handleError(err)
   {
     return  Observable.throw('Internal Server Error');
+  }
+
+  private formatEmployee(jsonresult)
+  {
+    let modifiedEmp: Employee = {
+      ...jsonresult,
+      FullName: jsonresult.FirstName + ' ' + jsonresult.LastName
+    };
+    console.log(modifiedEmp);
+    return modifiedEmp;
+
   }
 }

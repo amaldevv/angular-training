@@ -16,7 +16,8 @@ export class EmployeeCreateComponent implements OnInit {
      LastName:'',
      City:'',
      HrCode:'',
-     PhotoUrl:''
+     PhotoUrl:'',
+     FullName :''
   };
 
   sucessMessage : string;

@@ -8,7 +8,8 @@ export const EmployeeListMockData : Employee[] = [
         LastName:"Dev",
         City :"Trivandrum",
         HrCode:"",
-        PhotoUrl:""
+        PhotoUrl:"",
+        FullName:""
 
     },
     {
@@ -17,7 +18,8 @@ export const EmployeeListMockData : Employee[] = [
         LastName : "Test01",
         City : "Chennai",
         HrCode:"",
-        PhotoUrl:""
+        PhotoUrl:"",
+        FullName:""
     },
     {
         Id :3,
@@ -25,7 +27,8 @@ export const EmployeeListMockData : Employee[] = [
         LastName : "Test02",
         City : "New Delhi",
         HrCode:"",
-        PhotoUrl:""
+        PhotoUrl:"",
+        FullName:""
     },
     {
         Id :4,
@@ -33,6 +36,7 @@ export const EmployeeListMockData : Employee[] = [
         LastName : "Test03",
         City:"Mumbai",
         HrCode:"",
-        PhotoUrl:""
+        PhotoUrl:"",
+        FullName:""
     }
 ]

@@ -1,41 +1,29 @@
-<a routerLink="/employees" class="btn btn-sm btn-info">Back</a>
-<p>Create New Employee</p>
-<div class="alert alert-success" *ngIf="sucessMessage">
-  {{sucessMessage}}
-</div>
-<div class="alert alert-danger" *ngIf="errorMessage">
-  {{errorMessage}}
-</div>
-<form (ngSubmit)="createNewEmployee()" #CreateForm="ngForm">
-  <div class="container-fluid" *ngIf="!errorMessage">
-    <div class="form-group">
+<h3>Create Employee</h3>
+<form>
+  <div class="container-fluid">
+    <div class="form-group" [formGroup]="CreateForm">
       <div class="row">
         <div class ="col col-md-2">
           <label >Employee Id </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control" [(ngModel)]="newEmployee.Id"
-            name ="EmployeeId" #EmployeeId="ngModel"   />
+          <input type="text" class="form-control"  name ="EmployeeId" />
         </div>
       </div>
       <div class="row">
         <div class ="col col-md-2">
           <label>First Name </label>
         </div>
-        <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
-          <input type="text" class="form-control" [(ngModel)]="newEmployee.FirstName"
-           name ="FirstName" required #firstName="ngModel"  />
-           <span  class="help-block " *ngIf="firstName.touched && firstName.invalid">First Name is required</span>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control" name ="FirstName" />
         </div>
       </div>
       <div class="row">
         <div class ="col col-md-2">
           <label>Last Name </label>
         </div>
-        <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
-          <input type="text" class="form-control" [(ngModel)]="newEmployee.LastName"
-            name ="LastName" required  #LastName="ngModel"   />
-             <span class="help-block " *ngIf="LastName.touched && LastName.invalid">Last Name is required</span>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control"  name ="LastName" />
         </div>
 
       </div>
@@ -43,20 +31,17 @@
         <div class ="col col-md-2">
           <label>City </label>
         </div>
-        <div class ="col col-md-2" [ngClass]="{ 'has-error' : firstName.touched && firstName.invalid }" >
-          <input type="text" class="form-control" [(ngModel)]="newEmployee.City"
-            name ="City" #City="ngModel"  required />
-            <span class="help-block " *ngIf="City.touched && City.invalid">City is required</span>
+        <div class ="col col-md-2">
+          <input type="text" class="form-control"  name ="City" />
         </div>
 
       </div>
       <div class="row">
           <div class="col-md-2">
-             <button [disabled]="!CreateForm.valid" type="submit" class= "btn btn-lg btn-block btn-primary"
-             >Create</button>
+             <button type="submit" class= "btn btn-lg btn-block btn-primary"
+             (click)="createNewEmployee(newEmployee)" >Create</button>
           </div>
       </div>
     </div>
   </div>
-
 </form>

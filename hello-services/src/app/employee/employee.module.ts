@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 
 
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import {  employeeRouting } from "app/employee/employee.routing";
 import { EmployeeDetailsComponent } from "../employee/details/details.component";
@@ -21,6 +21,7 @@ import { EmployeeService } from "../shared/service/employee/service.component";
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     employeeRouting
   ],

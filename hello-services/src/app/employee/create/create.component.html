@@ -16,7 +16,7 @@
         </div>
         <div class ="col col-md-2">
           <input type="text" class="form-control" name ="FirstName" required formControlName="FirstName" />
-          <span class="help=block">{{firstNameError}}</span>
+          <span class="help-block">{{firstNameError}}</span>
         </div>
       </div>
       <div class="row">
@@ -24,7 +24,8 @@
           <label>Last Name </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control"  name ="LastName"  formControlName="LastName" />
+          <input type="text" class="form-control"  name ="LastName" required  formControlName="LastName" />
+          <span class="help-block">{{lastNameError}}</span>
         </div>
 
       </div>
@@ -33,7 +34,8 @@
           <label>City </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control"  name ="City" formControlName="City" />
+          <input type="text" class="form-control"  required name ="City" formControlName="City" />
+          <span class="help-block">{{cityError}}</span>
         </div>
 
       </div>

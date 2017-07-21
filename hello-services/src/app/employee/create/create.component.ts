@@ -23,6 +23,8 @@ export class EmployeeCreateComponent implements OnInit {
   sucessMessage : string;
   errorMessage : string;
   firstNameError: string;
+  lastNameError: string;
+  cityError: string;
   CreateForm : FormGroup;
 
   constructor(private service : EmployeeService,
@@ -38,10 +40,18 @@ export class EmployeeCreateComponent implements OnInit {
 
     this.CreateForm.valueChanges.subscribe(data => {
       let firstName = this.CreateForm.get('FirstName');
-       this.firstNameError="";
-      console.log(firstName.dirty, firstName.invalid);
+      let lastName = this.CreateForm.get('LastName');
+      let city = this.CreateForm.get('City');
+       this.firstNameError =
+       this.lastNameError =
+       this.cityError   ="";
+
       if(firstName.dirty && firstName.invalid)
         this.firstNameError="First Name is required";
+      if(lastName.dirty && lastName.invalid)
+        this.lastNameError="Last Name is required";
+      if(city.dirty && city.invalid)
+        this.cityError="City is required";
     })
   }
 

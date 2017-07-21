@@ -15,7 +15,8 @@
           <label>First Name </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control" name ="FirstName" formControlName="FirstName" />
+          <input type="text" class="form-control" name ="FirstName" required formControlName="FirstName" />
+          <span class="help=block">{{firstNameError}}</span>
         </div>
       </div>
       <div class="row">

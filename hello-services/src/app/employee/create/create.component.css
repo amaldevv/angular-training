@@ -4,17 +4,17 @@ h3 {
   font-size: 250%;
 }
 
-input.ng-valid.ng-touched {
+input.ng-valid.ng-dirty {
   border-left:  5px solid green;
 
 }
 
-input.ng-invalid.ng-touched {
+input.ng-invalid.ng-dirty {
   border-left:  5px solid red;
 
 }
-input.ng-invalid.ng-untouched {
+/* input.ng-invalid.ng-untouched {
   border-left:  5px solid red;
 
-}
+} */
 

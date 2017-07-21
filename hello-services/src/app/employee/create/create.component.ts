@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from "app/shared/models/employee";
 import { EmployeeService } from "app/shared/service/employee/service.component";
 import { Router } from "@angular/router";
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-employee-create',
   templateUrl: './create.component.html',
@@ -39,9 +39,10 @@ export class EmployeeCreateComponent implements OnInit {
     //   City: new FormControl()
     // });
 
+
     this.CreateForm = this.formBuilder.group({
       EmployeeId:[],
-      FirstName:[''],
+      FirstName:['', Validators.compose([Validators.minLength(3), Validators.maxLength(10)])],
       LastName:[''],
       City:[''],
     });
@@ -55,7 +56,14 @@ export class EmployeeCreateComponent implements OnInit {
        this.cityError   ="";
 
       if(firstName.dirty && firstName.invalid)
-        this.firstNameError="First Name is required";
+        this.firstNameError ="First Name is required";
+
+      if(firstName.errors && firstName.errors['minlength'] )
+        this.firstNameError ="First Name requires at least 3 characters";
+      if(firstName.errors && firstName.errors['maxlength'])
+        this.firstNameError ="First Name exceeded max length";
+
+
       if(lastName.dirty && lastName.invalid)
         this.lastNameError="Last Name is required";
       if(city.dirty && city.invalid)

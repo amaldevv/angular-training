@@ -36,7 +36,8 @@ export class EmployeeCreateComponent implements OnInit {
     });
 
     this.CreateForm.valueChanges.subscribe(data => {
-      console.log(data);
+      let firstName = this.CreateForm.get('FirstName');
+      console.log(firstName.value, firstName.valid, firstName.touched);
     })
   }
 

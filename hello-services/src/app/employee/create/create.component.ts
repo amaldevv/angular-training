@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from "app/shared/models/employee";
 import { EmployeeService } from "app/shared/service/employee/service.component";
 import { Router } from "@angular/router";
-import { FormGroup, FormControl } from  '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-employee-create',
   templateUrl: './create.component.html',
@@ -28,14 +28,22 @@ export class EmployeeCreateComponent implements OnInit {
   CreateForm : FormGroup;
 
   constructor(private service : EmployeeService,
-    private router: Router) { }
+    private router: Router,
+    private formBuilder : FormBuilder) { }
 
   ngOnInit() {
-    this.CreateForm = new FormGroup({
-      EmployeeId: new FormControl(),
-      FirstName: new FormControl(),
-      LastName: new FormControl(),
-      City: new FormControl()
+    // this.CreateForm = new FormGroup({
+    //   EmployeeId: new FormControl(),
+    //   FirstName: new FormControl(),
+    //   LastName: new FormControl(),
+    //   City: new FormControl()
+    // });
+
+    this.CreateForm = this.formBuilder.group({
+      EmployeeId:[],
+      FirstName:[''],
+      LastName:[''],
+      City:[''],
     });
 
     this.CreateForm.valueChanges.subscribe(data => {
@@ -53,6 +61,8 @@ export class EmployeeCreateComponent implements OnInit {
       if(city.dirty && city.invalid)
         this.cityError="City is required";
     })
+
+
   }
 
   createNewEmployee(){

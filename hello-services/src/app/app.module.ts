@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { appRouting } from "app/app.routing";
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from "app/employee/employee.module";
+import { AuthService } from "app/shared/service/auth.service";
+import { LoginComponent } from "app/login/login.component";
 
 
 
@@ -24,9 +26,10 @@ import { EmployeeModule } from "app/employee/employee.module";
     AppComponent,
     HomeComponent,
     AboutComponent,
-
+    LoginComponent,
     NavbarComponent,
     NotfoundComponent,
+
 
 
   ],
@@ -38,6 +41,7 @@ import { EmployeeModule } from "app/employee/employee.module";
 
   ],
   providers: [
+    AuthService
 
   ],
   bootstrap: [AppComponent]

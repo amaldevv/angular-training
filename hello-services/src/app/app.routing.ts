@@ -10,6 +10,7 @@ import { EmployeeCreateComponent } from "app/employee/create/create.component";
 import { EmployeeEditComponent } from "app/employee/edit/edit.component";
 
 import { EmployeeSectionComponent } from "app/employee/section/section.component";
+import { LoginComponent } from "app/login/login.component";
 
 
 
@@ -29,6 +30,11 @@ const appRoutes: Routes = [
 
     path:'about',
     component: AboutComponent
+  },
+  {
+
+    path:'login',
+    component: LoginComponent
   },
  {
 

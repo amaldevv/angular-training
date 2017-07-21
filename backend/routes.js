@@ -45,4 +45,17 @@ employeeRouter.put('/employees/:id/',(req,res)=>{
     res.status(201).send(choosenEmployee);
 });
 
+employeeRouter.post('/login',(req,res)=>{
+console.log('credentials');
+    const credentials = req.body;
+     console.log(credentials);
+     if(credentials.Username==="amal" && credentials.Password ==="dev")
+    {
+        return {
+            token: 'ALHI9u9u9u'
+        }
+    }
+
+});
+
 module.exports = employeeRouter;

@@ -30,12 +30,14 @@ export class EmployeeCreateComponent implements OnInit {
   ngOnInit() {
     this.CreateForm = new FormGroup({
       EmployeeId: new FormControl(),
-      FirstName: new FormControl('Enter first name'),
+      FirstName: new FormControl(),
       LastName: new FormControl(),
       City: new FormControl()
     });
-     console.log( this.CreateForm);
-     console.log( this.CreateForm.get("FirstName").value);
+
+    this.CreateForm.valueChanges.subscribe(data => {
+      console.log(data);
+    })
   }
 
   createNewEmployee(){

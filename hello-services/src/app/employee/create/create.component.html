@@ -7,7 +7,7 @@
           <label >Employee Id </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control"  name ="EmployeeId" />
+          <input type="text" class="form-control"  name ="EmployeeId" formControlName="EmployeeId" />
         </div>
       </div>
       <div class="row">
@@ -15,7 +15,7 @@
           <label>First Name </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control" name ="FirstName" />
+          <input type="text" class="form-control" name ="FirstName" formControlName="FirstName" />
         </div>
       </div>
       <div class="row">
@@ -23,7 +23,7 @@
           <label>Last Name </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control"  name ="LastName" />
+          <input type="text" class="form-control"  name ="LastName"  formControlName="LastName" />
         </div>
 
       </div>
@@ -32,14 +32,14 @@
           <label>City </label>
         </div>
         <div class ="col col-md-2">
-          <input type="text" class="form-control"  name ="City" />
+          <input type="text" class="form-control"  name ="City" formControlName="City" />
         </div>
 
       </div>
       <div class="row">
           <div class="col-md-2">
              <button type="submit" class= "btn btn-lg btn-block btn-primary"
-             (click)="createNewEmployee(newEmployee)" >Create</button>
+              >Create</button>
           </div>
       </div>
     </div>

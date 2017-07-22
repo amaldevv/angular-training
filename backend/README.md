@@ -20,7 +20,7 @@ Run the application using
 
 Create Dummy Data
 
-Step 1 :
+## Step 1 :
 Create a file named `mock.employee.js`
 Add the following command to load the library
 `const faker = require('faker');`
@@ -45,7 +45,7 @@ Return the list using
 
 `module.exports = contactList; `
 
-Step 2 : 
+## Step 2 : 
 
 Create a new file called `app.js`
 
@@ -59,7 +59,7 @@ Create an express application using the statement
 
 `express()` is a top-level function exported by the module.
 
-Step 3 
+## Step 3 
 Listen for connections
 
 ```
@@ -75,12 +75,12 @@ app.listen(10266, (err) =>{
 ```
 
 
-Step 4
+## Step 4
 Load  the mock data
 
 `const contacts = require('./mock.contacts');`
 
-Step 5
+## Step 5
 Create a GET method to list all the contacts
 
 ```
@@ -88,7 +88,7 @@ app.get("/api/contacts", (req,res)=>{
     res.send(empData);
 });
 ```
-Step 6
+## Step 6
 Create a get method to list details of a contact
 
 ```

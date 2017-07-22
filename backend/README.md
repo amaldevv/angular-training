@@ -78,32 +78,84 @@ app.listen(10266, (err) =>{
 ## Step 4
 Load  the mock data
 
-`const contacts = require('./mock.contacts');`
+`const contactsData = require('./mock.contacts');`
 
 ## Step 5
 Create a GET method to list all the contacts
 
 ```
 app.get("/api/contacts", (req,res)=>{
-    res.send(empData);
+    res.send(contactsData);
 });
 ```
 ## Step 6
 Create a get method to list details of a contact
 
 ```
-app.get('/api/employee/:id',(reg,res)=>{
-    const empID= parseInt(req.params['id']);
+app.get('/api/contacts/:id',(reg,res)=>{
+    const contactID= parseInt(req.params['id']);
 
-    const selectedEmployee = empData.find((employee)=>{
-        return employee.Id === empID;
+    const selectedContact = contactsData.find((contact)=>{
+        return contact.Id === contactID;
 
     });
     
-    if(selectedEmployee)
-        res.send(selectedEmployee);
+    if(selectedContact)
+        res.send(selectedContact);
     else
-        res.json('Not Found for ' + empID);
+        res.json('Not Found for ' + contactID);
 
 })
+```
+
+## Step 7 
+Add a post method to save a new item
+
+Load `faker` module
+
+```
+const faker  =require('faker');
+```
+
+Load `body-parser` module
+
+```
+const bodyParser = require('body-parser');
+```
+
+Configure express to parse incoming json using
+
+```
+app.use(bodyParser.json());
+```
+
+Create a post method
+```
+app.post('/api/contacts',(req,res)=>{
+    const newContact = req.body;
+    
+    newContact.Id = faker.random.number(1000);
+    contactData.push(newContact);
+
+    res.status(201).send(contactsData);
+});
+
+```
+
+## Step 8
+Add a put method to update an existing item
+
+```
+app.put('/api/employee/:id',(req,res)=>{
+    const choosenContact = req.body;
+    
+    const contactIndex = contactData.findIndex((contact)=>{
+        return contact.Id === choosenContact.Id;
+
+    });
+   
+    empData.splice(contactIndex,1,choosenContact);
+    res.status(201).send(choosenContact);
+});
+
 ```
